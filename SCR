@@ -1,0 +1,43 @@
+#!/bin/bash
+
+export JAVA_HOME="/booleanfs/sahoo/softwares/java/jre1.8.0_25"
+export JAVA_HOME="/booleanfs/sahoo/softwares/java/jdk1.8.0_45"
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH="/booleanfs/sahoo/softwares/BooleanNet/dist/lib/tools.jar"
+stepminer="java -cp $CLASSPATH -Xms64m -Xmx10G tools.CustomAnalysis"
+stepminer1="java -cp $CLASSPATH -Xms64m -Xmx10G tools.Analyze"
+export PERL_HASH_SEED=0
+export PYTHONHASHSEED=0
+
+
+#--------------- download the required data
+
+perl -I .. analyze.pl data-download GL1 human-gpl570
+perl -I .. analyze.pl toidx human-gpl570-expr.txt > human-gpl570-idx.txt
+perl -I .. analyze.pl thr human-gpl570-expr.txt 2 500 0.5> human-gpl570-thr.txt
+perl -I .. analyze.pl bv human-gpl570 > human-gpl570-bv.txt
+perl -I .. analyze.pl Info human-gpl570 > human-gpl570-info.txt
+perl -I .. analyze.pl VInfo human-gpl570 > human-gpl570-vinfo.txt
+
+
+
+
+# ---------------- create the required files
+#FILE=Global-net-3-0.1
+##rm -f $FILE.rl
+#${stepminer} boolean bitMatrix $FILE.rl \
+#  human-gpl570-bv.txt \
+#  $FILE.ph All 0.1 3 0.05
+#${stepminer} boolean bitMatrixFill $FILE.rl
+#${stepminer} boolean bitMatrixFillStats $FILE.rl
+
+
+#FILE2=Global-net-3-0.15
+##rm -f $FILE2.rl
+#${stepminer} boolean bitMatrix $FILE2.rl \
+#  human-gpl570-bv.txt \
+#  $FILE2.ph All 0.15 3 0.05
+#${stepminer} boolean bitMatrixFill $FILE2.rl
+#${stepminer} boolean bitMatrixFillStats $FILE2.rl
+
+
