@@ -1,7 +1,7 @@
 
 #-------------------------- 
 rm(list=ls())
-set.seed(0)  #use to ensure reproducibility. remove in actual use.
+set.seed(10)  #use to ensure reproducibility. remove in actual use.
 setwd("/BTR")
 # (1) Setup paths and environment.
 library(BTR)
