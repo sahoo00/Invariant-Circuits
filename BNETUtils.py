@@ -472,10 +472,7 @@ def Update_edges_after_clustering(moved_and_shared_genes,res_sh_dys_fn, edges):
 
 
 
-#fn_hl_shrd_p_ll_dysfn=g_hl_shrd_p_ll_per
-#saved_dys #=saved_per
-# g_ll_per =fn_ll_dysfn
-#g_ll_shrd=fn_ll_shrd
+
 
 def lolo_path(p_hh_fn, fn_hl_shrd_p_ll_dysfn, fn_ll_dysfn, t_m):
     global edge_write
@@ -678,11 +675,6 @@ def add_single_hilo_op(add_hilo_op, genes):
             
             
             
-#saved_gr=saved_func
-#p_hh_gr=p_hh_func
-#g_ll_shrd=func_ll_shrd
-#
-
 
 def hihi_path(p_hh_func, g_hl_shrd_p_ll_per, g_ll_per, t_m):
 
