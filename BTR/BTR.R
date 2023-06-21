@@ -164,7 +164,6 @@ net <- visNetwork(nodes_m, edges_m, width = "100%") %>%
     visLayout(randomSeed = 114)
     
 
-#visEdges(arrows = list(to = list(enabled = TRUE, type = "bar"))) %>% 
 
 name2='visnet'
 net %>% visSave(file =  paste0("BTR_NET", "_", name2, ".html"))
