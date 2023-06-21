@@ -78,7 +78,6 @@ recode_str_int_nodes <- function(df) {
   df$color.border = rep("black", times = nrow(df))
   df$borderWidth = rep("0.2", times = nrow(df))
   df$widthConstraint = rep("30", times = nrow(df))
-  # df[, color.background := ifelse(df$ty == 'and', "white",'skyblue')]
   df[, label := ifelse(grepl('^and_',df$Id), '',  toupper(df$Id))]
   df[, shadow.size := ifelse(grepl('^and_', df$Id), "5", "15")]
   df[, group := ifelse(df$ty == 'and',"",ifelse(toupper(df$Id) %in% toupper(funct),
@@ -89,7 +88,7 @@ recode_str_int_nodes <- function(df) {
 
   df
 #
-} # recode_str_int and  set other features
+} # r
 #
 nodes_m <- recode_str_int_nodes(nodes)
 #
@@ -109,25 +108,18 @@ recode_str_int_edges <- function(df) {
   df[, color := ifelse(Directed == 'activates',
                        "darkblue",
                        ifelse(Directed == 'inhibits', "red", 'rest'))]
-  # df$dashes = c(TRUE, FALSE)
+
   df[, dashes := ifelse(grepl('activates', df$Directed), FALSE, TRUE)]
 
 
-  # df[, dashes:= ifelse(Directed=='activates',"FALSE",ifelse(Directed=='inhibits',"TRUE",'rest'))]
 
   df$shadow  = rep("TRUE", times = nrow(df))
 
-#   df$arrows.to.type  = rep("arrow", times = nrow(df))
-#   df$arrows.to.enabled  = rep("TRUE", times = nrow(df))
 
-
-
-
-#
 
   # 3. Result
   df
-} # recode_str_int
+} #
 
 edges_m <- recode_str_int_edges(setDT(j))
 colnames(edges_m)
